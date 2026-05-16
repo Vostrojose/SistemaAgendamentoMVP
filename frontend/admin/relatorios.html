@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Relatórios
+    </title>
+
+
+ <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+    <!-- LAYOUT -->
+    <div class="admin-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2>
+                Admin
+            </h2>
+
+
+            <a href="dashboard.html">
+
+                Dashboard
+
+            </a>
+
+
+            <a href="usuarios.html">
+
+                Usuários
+
+            </a>
+
+
+            <a href="agendamentos.html">
+
+                Agendamentos
+
+            </a>
+
+
+            <a href="relatorios.html">
+
+                Relatórios
+
+            </a>
+
+
+            <button id="logoutBtn">
+
+                Sair
+
+            </button>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+
+            <h1>
+                Relatórios do Sistema
+            </h1>
+
+
+            <!-- GRID -->
+            <div class="cards-grid">
+
+
+                <!-- TOTAL USUÁRIOS -->
+                <div class="card">
+
+                    <h3>
+                        👤 Total de Usuários
+                    </h3>
+
+                    <p
+                        class="numero"
+                        id="totalUsuarios"
+                    >
+
+                        0
+
+                    </p>
+
+                </div>
+
+
+                <!-- TOTAL AGENDAMENTOS -->
+                <div class="card">
+
+                    <h3>
+                        📅 Total de Agendamentos
+                    </h3>
+
+                    <p
+                        class="numero"
+                        id="totalAgendamentos"
+                    >
+
+                        0
+
+                    </p>
+
+                </div>
+
+
+                <!-- STATUS -->
+                <div class="card">
+
+                    <h3>
+                        ⚙️ Status do Sistema
+                    </h3>
+
+                    <p
+                        class="status-online"
+                    >
+
+                        Sistema Online
+
+                    </p>
+
+                </div>
+
+
+                <!-- VERSÃO -->
+                <div class="card">
+
+                    <h3>
+                        🚀 Versão
+                    </h3>
+
+                    <p>
+
+                        MVP 1.0
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Dashboard Admin
+    </title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+    <!-- LAYOUT -->
+    <div class="admin-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2>
+                Admin
+            </h2>
+
+
+            <a href="dashboard.html">
+
+                Dashboard
+
+            </a>
+
+
+            <a href="usuarios.html">
+
+                Usuários
+
+            </a>
+
+
+            <a href="agendamentos.html">
+
+                Agendamentos
+
+            </a>
+
+
+            <a href="relatorios.html">
+
+                Relatórios
+
+            </a>
+
+
+            <button id="logoutBtn">
+
+                Sair
+
+            </button>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+
+            <h1>
+                Dashboard Administrativo
+            </h1>
+
+
+            <!-- CARDS -->
+            <div class="cards-grid">
+
+
+                <!-- USUÁRIOS -->
+                <div class="card">
+
+                    <h3>
+                        👤 Usuários
+                    </h3>
+
+                    <p id="totalUsuarios">
+
+                        0
+
+                    </p>
+
+                </div>
+
+
+                <!-- AGENDAMENTOS -->
+                <div class="card">
+
+                    <h3>
+                        📅 Agendamentos
+                    </h3>
+
+                    <p id="totalAgendamentos">
+
+                        0
+
+                    </p>
+
+                </div>
+
+
+                <!-- STATUS -->
+                <div class="card">
+
+                    <h3>
+                        ⚙️ Sistema
+                    </h3>
+
+                    <p>
+
+                        Online
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div><script src="../js/dashboard.js"></script>
+
+</body>
+</html>

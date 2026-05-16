@@ -15,16 +15,22 @@ const dbPool = require('./config/db');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// servir arquivos estáticos da pasta public (pasta está em ...\SistemaAgendamento\public)
-app.use(express.static(path.join(__dirname, '..', 'public')));
+//aut
+app.use(
+  express.static(
+    path.join(__dirname, '..', '..', 'frontend')
+  )
+);
 
 // Importação das rotas
 const usuariosRoutes = require('./routes/usuarios');
 const agendaRoutes = require('./routes/agenda');
 
-// Rota raiz
+// aut
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(
+    path.join(__dirname, '..', '..', 'frontend', 'index.html')
+  );
 });
 
 // Rotas da aplicação

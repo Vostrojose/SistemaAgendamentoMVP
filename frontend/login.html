@@ -1,0 +1,167 @@
+<!--
+ Projeto PI Senac 2025 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Tela de login
+ Data: [17-11-2025]
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login - Sistema Agendamento</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <span>Sistema Agendamento</span>
+
+      <a href="cadastro.html">
+        Criar Conta
+      </a>
+    </nav>
+  </header>
+
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+
+    <h1>Login</h1>
+
+    <form id="formLogin">
+
+      <!-- EMAIL -->
+      <label for="email">
+        E-mail
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Digite seu e-mail"
+        required
+      >
+
+
+      <!-- SENHA -->
+      <label for="senha">
+        Senha
+      </label>
+
+      <input
+        type="password"
+        id="senha"
+        placeholder="Digite sua senha"
+        required
+      >
+
+
+      <!-- BOTÃO -->
+      <button type="submit">
+        Entrar
+      </button>
+
+    </form>
+
+
+    <!-- MENSAGEM -->
+    <p id="mensagem"></p>
+
+  </main>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // Seleciona formulário
+    const formLogin = document.getElementById('formLogin');
+
+
+    // Evento submit
+    formLogin.addEventListener('submit', async (event) => {
+
+      // Impede reload da página
+      event.preventDefault();
+
+
+      // Pega valores dos inputs
+      const email = document.getElementById('email').value;
+
+      const senha = document.getElementById('senha').value;
+
+
+      // Objeto enviado para backend
+      const dados = {
+        email,
+        senha
+      };
+
+
+      try {
+
+        // Requisição login
+        const resposta = await fetch('/usuarios/login', {
+          method: 'POST',
+
+          headers: {
+            'Content-Type': 'application/json'
+          },
+
+          body: JSON.stringify(dados)
+        });
+
+
+        // Converte resposta em JSON
+        const resultado = await resposta.json();
+
+
+        // Se der erro
+        if (!resposta.ok) {
+
+          document.getElementById('mensagem').innerText =
+            resultado.message || 'Erro ao fazer login';
+
+          return;
+        }
+
+
+        // Salva token
+        localStorage.setItem(
+          'tokenUsuario',
+          resultado.token
+        );
+
+
+        // Mensagem sucesso
+        document.getElementById('mensagem').innerText =
+          'Login realizado com sucesso!';
+
+
+        // Redireciona usuário
+        setTimeout(() => {
+          window.location.href = 'paginaInicial.html';
+        }, 1000);
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        document.getElementById('mensagem').innerText =
+          'Erro de conexão com servidor';
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
+```

@@ -1,0 +1,202 @@
+<!--
+ Projeto PI Senac 2025 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Lista de agendamentos
+ Data: [17-11-2025]
+--><!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Meus Agendamentos
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        .agendamento-card {
+
+            background: #334155;
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .agendamento-card h3 {
+
+            margin-bottom: 10px;
+        }
+
+
+        .agendamento-card p {
+
+            color: #cbd5e1;
+
+            margin-bottom: 6px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <nav class="navbar">
+
+            <a href="paginaInicial.html">
+
+                ← Voltar
+
+            </a>
+
+
+            <span>
+                Meus Agendamentos
+            </span>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO -->
+    <main>
+
+        <h1>
+            Meus Agendamentos
+        </h1>
+
+
+        <!-- LISTA -->
+        <div id="listaAgendamentos"></div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const token =
+            localStorage.getItem(
+                'tokenUsuario'
+            );
+
+
+        if (!token) {
+
+            window.location.href =
+                'login.html';
+        }
+
+
+        async function carregarAgendamentos() {
+
+            try {
+
+                const resposta = await fetch(
+                    '/agendamentos/meus',
+                    {
+
+                        headers: {
+                            Authorization:
+                                'Bearer ' + token
+                        }
+
+                    }
+                );
+
+
+                const agendamentos =
+                    await resposta.json();
+
+
+                const lista =
+                    document.getElementById(
+                        'listaAgendamentos'
+                    );
+
+
+                if (agendamentos.length === 0) {
+
+                    lista.innerHTML =
+                        '<p>Nenhum agendamento encontrado.</p>';
+
+                    return;
+                }
+
+
+                lista.innerHTML = '';
+
+
+                agendamentos.forEach(
+                    (agendamento) => {
+
+                        const card =
+                            document.createElement('div');
+
+
+                        card.classList.add(
+                            'agendamento-card'
+                        );
+
+
+                        card.innerHTML =
+
+                            `
+                            <h3>
+                                ${agendamento.descricao}
+                            </h3>
+
+                            <p>
+                                Data:
+                                ${agendamento.data}
+                            </p>
+
+                            <p>
+                                Hora:
+                                ${agendamento.hora}
+                            </p>
+                            `;
+
+
+                        lista.appendChild(card);
+
+                    }
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+            }
+
+        }
+
+
+        carregarAgendamentos();
+
+    </script>
+
+</body>
+</html>

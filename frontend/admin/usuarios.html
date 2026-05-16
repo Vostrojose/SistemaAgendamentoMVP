@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Usuários
+    </title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+</head>
+
+<body>
+
+    <!-- LAYOUT -->
+    <div class="admin-layout">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <h2>
+                Admin
+            </h2>
+
+
+            <a href="dashboard.html">
+
+                Dashboard
+
+            </a>
+
+
+            <a href="usuarios.html">
+
+                Usuários
+
+            </a>
+
+
+            <a href="agendamentos.html">
+
+                Agendamentos
+
+            </a>
+
+
+            <a href="relatorios.html">
+
+                Relatórios
+
+            </a>
+
+
+            <button id="logoutBtn">
+
+                Sair
+
+            </button>
+
+        </aside>
+
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+
+            <h1>
+                Usuários Cadastrados
+            </h1>
+
+
+            <!-- TABELA -->
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Nome
+                            </th>
+
+                            <th>
+                                E-mail
+                            </th>
+
+                            <th>
+                                Tipo
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tabelaUsuarios">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </main>
+
+    </div><script src="../js/dashboard.js"></script>
+</body>
+</html>
