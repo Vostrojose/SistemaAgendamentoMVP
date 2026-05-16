@@ -7,11 +7,14 @@
 
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const path = require('path');
 const dbPool = require('./config/db');
 
 // Middlewares para interpretar JSON e dados de formulários HTML
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -25,6 +28,7 @@ app.use(
 // Importação das rotas
 const usuariosRoutes = require('./routes/usuarios');
 const agendaRoutes = require('./routes/agenda');
+
 
 // aut
 app.get('/', (req, res) => {
