@@ -1,0 +1,63 @@
+<!--
+ Projeto PI Senac 2025 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Lista de agendamentos
+ Data: [17-11-2025]
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Agendamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="paginainicial.html">← Voltar</a>
+            <span>Meus Agendamentos</span>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Meus Agendamentos</h2>
+
+        <ul id="listaAgendamentos">
+            <li>Carregando...</li>
+        </ul>
+    </main>
+
+    <script>
+        const token = localStorage.getItem("tokenUsuario");
+        if (!token) window.location.href = "login.html";
+
+        async function carregarAgendamentos() {
+            const resposta = await fetch("/agendamentos/meus", {
+                method: "GET",
+                headers: { "Authorization": "Bearer " + token }
+            });
+
+            const lista = await resposta.json();
+
+            if (!lista.length) {
+                document.getElementById("listaAgendamentos").innerHTML =
+                    "<li>Nenhum agendamento encontrado.</li>";
+                return;
+            }
+
+            document.getElementById("listaAgendamentos").innerHTML =
+                lista.map(a => `
+                    <li>
+                        <b>${a.data}</b> às <b>${a.hora}</b><br>
+                        ${a.descricao}
+                    </li>
+                `).join("");
+        }
+
+        carregarAgendamentos();
+    </script>
+
+</body>
+</html>
