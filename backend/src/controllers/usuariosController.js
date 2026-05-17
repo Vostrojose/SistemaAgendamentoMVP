@@ -8,7 +8,7 @@
 
 const jwt = require('jsonwebtoken');
 const pool = require('../config/db');
-const bcrypt = require('bcrypt'); 
+const bcrypt = require('bcrypt');
 require('dotenv').config();
 
 // Cadastrar novo usuário
@@ -50,11 +50,11 @@ exports.registrarUsuario = async (req, res) => {
 // Login
 exports.loginUsuario = async (req, res) => {
   try {
-  if (!req.body || !req.body.email || !req.body.senha) {
-  return res.status(400).json({ message: 'Campos obrigatórios.' });
-}
+    if (!req.body || !req.body.email || !req.body.senha) {
+      return res.status(400).json({ message: 'Campos obrigatórios.' });
+    }
 
-const { email, senha } = req.body;
+    const { email, senha } = req.body;
 
     const resultado = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
 
@@ -76,9 +76,22 @@ const { email, senha } = req.body;
     );
 
     return res.json({
+
       message: '✅ Login realizado com sucesso!',
+
       token,
-      usuario: { id: usuario.id, nome: usuario.nome, email: usuario.email }
+
+      usuario: {
+
+        id: usuario.id,
+
+        nome: usuario.nome,
+
+        email: usuario.email,
+
+        tipo: usuario.tipo
+      }
+
     });
 
   } catch (error) {
@@ -86,7 +99,7 @@ const { email, senha } = req.body;
   }
 };
 
-  
+
 exports.retornaUsuarios = async (req, res) => {
   try {
     const resultado = await pool.query('SELECT * FROM usuarios');
