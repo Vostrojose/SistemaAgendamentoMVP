@@ -19,9 +19,6 @@
 
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="/css/auth.css">
-
-
 
     <style>
         .agendamento-card {
@@ -91,6 +88,8 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        const API_URL =
+            'https://sistema-agendamento-mvp.onrender.com';
 
         const token =
             localStorage.getItem(
@@ -110,7 +109,7 @@
             try {
 
                 const resposta = await fetch(
-                    '/agendamentos/meus',
+                    `${API_URL}/agendamentos/meus`,
                     {
 
                         headers: {

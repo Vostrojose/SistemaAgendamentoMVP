@@ -153,6 +153,8 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        const API_URL =
+            'https://sistema-agendamento-mvp.onrender.com';
 
         const token =
             localStorage.getItem('tokenUsuario');
@@ -170,7 +172,7 @@
             try {
 
                 const resposta = await fetch(
-                    '/usuarios/perfil',
+                    `${API_URL}/usuarios/perfil`,
                     {
 
                         headers: {

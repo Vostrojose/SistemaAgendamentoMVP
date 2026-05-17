@@ -5,6 +5,7 @@
 -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,11 +39,13 @@
     </main>
 
     <script>
+        const API_URL =
+            "https://sistema-agendamento-mvp.onrender.com";
         const token = localStorage.getItem("tokenUsuario");
         if (!token) window.location.href = "login.html";
 
         async function carregarPerfil() {
-            const resposta = await fetch("/usuarios/perfil", {
+            const resposta = await fetch(`${API_URL}/usuarios/perfil`, {
                 method: "GET",
                 headers: { "Authorization": "Bearer " + token }
             });
@@ -62,7 +65,7 @@
                 email: document.getElementById("email").value
             };
 
-            const resposta = await fetch("/usuarios/editar", {
+            const resposta = await fetch(`${API_URL}/usuarios/editar`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -77,4 +80,5 @@
     </script>
 
 </body>
+
 </html>

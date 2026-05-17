@@ -137,8 +137,21 @@
                     );
 
 
-                    const resultado =
-                        await resposta.json();
+                    const texto =
+    await resposta.text();
+
+let resultado = {};
+
+try {
+
+    resultado =
+        JSON.parse(texto);
+
+} catch (err) {
+
+    console.error(err);
+
+}
 
 
                     if (!resposta.ok) {
