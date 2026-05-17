@@ -112,6 +112,7 @@
 
         // Converte resposta em JSON
         const resultado = await resposta.json();
+        console.log(resultado);
 
 
         // Se der erro
@@ -142,7 +143,16 @@
 
         // Redireciona usuário
         setTimeout(() => {
-          window.location.href = 'paginaInicial.html';
+          if (resultado.usuario.tipo === 'admin') {
+
+            window.location.href =
+              'admin/dashboard.html';
+
+          } else {
+
+            window.location.href =
+              'paginaInicial.html';
+          }
         }, 1000);
 
 
