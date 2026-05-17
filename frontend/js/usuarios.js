@@ -1,13 +1,14 @@
 /*
 Projeto PI Senac 2026 - v1 "Front-end"
- Autor: [grupo 31]
- Descrição: Formulário novo agendamento
 */
 
 
 // =========================================
 // TOKEN
 // =========================================
+
+const API_URL =
+    'https://sistema-agendamento-mvp.onrender.com';
 
 const token =
     localStorage.getItem(
@@ -35,7 +36,15 @@ async function carregarUsuarios() {
     try {
 
         const resposta = await fetch(
-            '/usuarios/retornaUsuarios'
+
+            `${API_URL}/usuarios/retornaUsuarios`,
+
+            {
+                headers: {
+                    Authorization:
+                        'Bearer ' + token
+                }
+            }
         );
 
 
