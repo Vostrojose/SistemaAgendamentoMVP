@@ -76,6 +76,7 @@
 
             const resultado = await resposta.json();
             document.getElementById("mensagem").innerText = resultado.message;
+            document.getElementById("mensagem").style.color = resposta.ok ? '#4caf50' : '#d32f2f';
         });
     </script>
 

@@ -174,8 +174,8 @@ async function carregarAgendamentos() {
 
 function editarAgendamento(id) {
 
-    alert(
-        'Futuro editar agendamento ID: ' + id
+    console.log(
+        'Editar agendamento ID: ' + id
     );
 
 }
@@ -195,12 +195,16 @@ function excluirAgendamento(id) {
 
     if (!confirmar) {
 
+        console.log(
+            'Exclusão cancelada para agendamento ID: ' + id
+        );
+
         return;
     }
 
 
-    alert(
-        'Futuro DELETE agendamento ID: ' + id
+    console.log(
+        'DELETE agendamento ID: ' + id
     );
 
 }

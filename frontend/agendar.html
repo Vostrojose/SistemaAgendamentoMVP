@@ -76,13 +76,16 @@
                 if (!resposta.ok) {
                     const msgErro = (resultado && (resultado.mensagem || resultado.message)) || `Erro ${resposta.status}`;
                     document.getElementById("mensagem").innerText = msgErro;
+                    document.getElementById("mensagem").style.color = '#d32f2f';
                     return;
                 }
 
                 const msg = (resultado && (resultado.mensagem || resultado.message)) || 'Agendamento criado com sucesso!';
                 document.getElementById("mensagem").innerText = msg;
+                document.getElementById("mensagem").style.color = '#4caf50';
             } catch (err) {
                 document.getElementById("mensagem").innerText = 'Erro de conexão: ' + err.message;
+                document.getElementById("mensagem").style.color = '#d32f2f';
             }
         });
     </script>

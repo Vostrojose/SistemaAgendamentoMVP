@@ -120,6 +120,8 @@
           document.getElementById('mensagem').innerText =
             resultado.message || 'Erro ao fazer login';
 
+          document.getElementById('mensagem').style.color = '#d32f2f';
+
           return;
         }
 
@@ -135,6 +137,8 @@
         document.getElementById('mensagem').innerText =
           'Login realizado com sucesso!';
 
+        document.getElementById('mensagem').style.color = '#4caf50';
+
 
         // Redireciona usuário
         setTimeout(() => {
@@ -148,6 +152,8 @@
 
         document.getElementById('mensagem').innerText =
           'Erro de conexão com servidor';
+
+        document.getElementById('mensagem').style.color = '#d32f2f';
       }
 
     });

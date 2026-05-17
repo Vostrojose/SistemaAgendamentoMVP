@@ -162,6 +162,10 @@ document.getElementById(
 
             'Futuro update usuário';
 
+        document.getElementById(
+            'mensagem'
+        ).style.color = '#8b5cf6';
+
 
     }
 );
