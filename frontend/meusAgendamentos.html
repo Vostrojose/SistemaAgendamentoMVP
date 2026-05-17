@@ -155,23 +155,44 @@
                         );
 
 
+                        const data = new Date(
+                            agendamento.data_horario
+                        );
+
+                        const dataFormatada =
+                            data.toLocaleDateString('pt-BR');
+
+                        const horaFormatada =
+                            data.toLocaleTimeString(
+                                'pt-BR',
+                                {
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                }
+                            );
+
                         card.innerHTML =
 
                             `
-                            <h3>
-                                ${agendamento.descricao}
-                            </h3>
+    <h3>
+        ${agendamento.titulo || 'Agendamento'}
+    </h3>
 
-                            <p>
-                                Data:
-                                ${agendamento.data}
-                            </p>
+    <p>
+        Descrição:
+        ${agendamento.descricao || 'Sem descrição'}
+    </p>
 
-                            <p>
-                                Hora:
-                                ${agendamento.hora}
-                            </p>
-                            `;
+    <p>
+        Data:
+        ${dataFormatada}
+    </p>
+
+    <p>
+        Hora:
+        ${horaFormatada}
+    </p>
+    `;
 
 
                         lista.appendChild(card);
