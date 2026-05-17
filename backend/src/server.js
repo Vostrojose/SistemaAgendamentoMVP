@@ -14,7 +14,11 @@ const dbPool = require('./config/db');
 
 // Middlewares para interpretar JSON e dados de formulários HTML
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://sistema-agendamento-mvp.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
