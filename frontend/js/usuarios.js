@@ -1,9 +1,7 @@
 /*
-=================================================
-USUARIOS.JS
-SistemaAgendamento_MVP
-Tela administrativa de usuários
-=================================================
+Projeto PI Senac 2026 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Formulário novo agendamento
 */
 
 

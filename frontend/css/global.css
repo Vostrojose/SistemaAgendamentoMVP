@@ -1,0 +1,334 @@
+/* =========================================
+  Projeto PI Senac 2026 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Formulário novo agendamento
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   TITULOS
+========================================= */
+
+h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    color: #f8fafc;
+}
+
+
+h2 {
+
+    color: #f8fafc;
+}
+
+
+h3 {
+
+    color: #e2e8f0;
+}
+
+
+/* =========================================
+   PARÁGRAFOS
+========================================= */
+
+p {
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   FORMULÁRIOS
+========================================= */
+
+.form-container {
+
+    background: #1e293b;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd5e1;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #334155;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border:
+        1px solid #8b5cf6;
+
+    box-shadow:
+        0 0 0 3px rgba(139,92,246,0.2);
+}
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+::placeholder {
+
+    color: #94a3b8;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+.btn-primary {
+
+    width: 100%;
+
+    padding: 14px;
+
+    background: #8b5cf6;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.btn-primary:hover {
+
+    background: #7c3aed;
+}
+
+
+/* BOTÃO SECUNDÁRIO */
+
+.btn-secondary {
+
+    background: #334155;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    color: white;
+}
+
+
+.btn-secondary:hover {
+
+    background: #475569;
+}
+
+
+/* =========================================
+   TABELAS
+========================================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+th {
+
+    text-align: left;
+}
+
+
+/* =========================================
+   MENSAGENS
+========================================= */
+
+.success-message {
+
+    background: #14532d;
+
+    color: #dcfce7;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    margin-top: 20px;
+}
+
+
+.error-message {
+
+    background: #7f1d1d;
+
+    color: #fee2e2;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+
+    opacity: 0.6;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #0f172a;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: #475569;
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #64748b;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 768px) {
+
+    h1 {
+
+        font-size: 26px;
+    }
+
+
+    .form-container {
+
+        padding: 20px;
+    }
+
+}

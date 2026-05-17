@@ -1,9 +1,7 @@
 /*
-=================================================
-DASHBOARD.JS
-SistemaAgendamento_MVP
-Painel Administrativo
-=================================================
+Projeto PI Senac 2026 - v1 "Front-end"
+ Autor: [grupo 31]
+ Descrição: Formulário novo agendamento
 */
 
 
