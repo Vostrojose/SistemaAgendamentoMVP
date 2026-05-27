@@ -50,28 +50,10 @@ async function ensureTables() {
     await pool.query(table.createStatement);
     console.log(`Tabela '${table.name}' verificada/criada.`);
   }
-  
-  // Adicionar coluna 'tipo' se não existir
-  try {
-    await pool.query(`
-      ALTER TABLE usuarios 
-      ADD COLUMN tipo TEXT DEFAULT 'usuario'
-    `);
-    console.log("Coluna 'tipo' adicionada à tabela usuarios.");
-  } catch (err) {
-    if (err.code === '42701') {
-      // Coluna já existe, ignorar erro
-      console.log("Coluna 'tipo' já existe em usuarios.");
-    } else {
-      console.error("Erro ao adicionar coluna 'tipo':", err.message);
-    }
-  }
+
 }
 
-// Teste de conexão (opcional, mas útil para logs)
-pool.connect()
-  .then(() => console.log(' Conectado ao PostgreSQL com sucesso!'))
-  .catch(err => console.error(' Erro ao conectar ao banco:', err));
+
 
 pool.ensureTables = ensureTables;
 
