@@ -22,24 +22,11 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//aut
-app.use(
-  express.static(
-    path.join(__dirname, '..', '..', 'frontend')
-  )
-);
+
 
 // Importação das rotas
 const usuariosRoutes = require('./routes/usuarios');
 const agendaRoutes = require('./routes/agenda');
-
-
-// aut
-app.get('/', (req, res) => {
-  res.sendFile(
-    path.join(__dirname, '..', '..', 'frontend', 'index.html')
-  );
-});
 
 // Rotas da aplicação
 app.use('/usuarios', usuariosRoutes);
